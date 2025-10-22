@@ -6,43 +6,32 @@
 
 ```mermaid
 graph LR
-    A[🚀开始] --> B[📋初始化]
-    B --> C[📜章程]
-    C --> D[📝需求]
-    D --> E[❓澄清]
-    E --> F[📋计划]
-    F --> G[📋任务]
-    G --> H[🔍分析]
-    H --> I[🚀开发]
-    I --> J{满意?}
-    J -->|否| K[🔧修改]
-    K --> I
-    J -->|是| L[📝更新]
-    L --> M[📚总结]
-    M --> N[🎉完成]
+    A[📋初始化] --> B[📜章程]
+    B --> C[📝需求]
+    C --> D[❓澄清]
+    D --> E[📋计划]
+    E --> F[📋任务]
+    F --> G[🔍分析]
+    G --> H[🚀开发]
+    H --> I{满意?}
+    I -->|否| J[🔧修改]
+    J --> H
+    I -->|是| K[📝更新]
+    K --> L[📚总结]
     
-    style A fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
-    style B fill:#e1f5fe,stroke:#2196f3,stroke-width:1px
-    style C fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
-    style D fill:#e8f5e8,stroke:#4caf50,stroke-width:1px
-    style E fill:#fff3e0,stroke:#ff9800,stroke-width:1px
-    style F fill:#fce4ec,stroke:#e91e63,stroke-width:1px
-    style G fill:#f1f8e9,stroke:#8bc34a,stroke-width:1px
-    style H fill:#fff8e1,stroke:#ffc107,stroke-width:1px
-    style I fill:#e3f2fd,stroke:#03a9f4,stroke-width:1px
-    style J fill:#ffebee,stroke:#f44336,stroke-width:1px
-    style K fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
-    style L fill:#e8f5e8,stroke:#4caf50,stroke-width:1px
-    style M fill:#f9fbe7,stroke:#8bc34a,stroke-width:1px
-    style N fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+    style A fill:#e1f5fe,stroke:#2196f3,stroke-width:1px
+    style B fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
+    style C fill:#e8f5e8,stroke:#4caf50,stroke-width:1px
+    style D fill:#fff3e0,stroke:#ff9800,stroke-width:1px
+    style E fill:#fce4ec,stroke:#e91e63,stroke-width:1px
+    style F fill:#f1f8e9,stroke:#8bc34a,stroke-width:1px
+    style G fill:#fff8e1,stroke:#ffc107,stroke-width:1px
+    style H fill:#e3f2fd,stroke:#03a9f4,stroke-width:1px
+    style I fill:#ffebee,stroke:#f44336,stroke-width:1px
+    style J fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
+    style K fill:#e8f5e8,stroke:#4caf50,stroke-width:1px
+    style L fill:#f9fbe7,stroke:#8bc34a,stroke-width:1px
 ```
-
-### 📋 流程说明
-- **🟢 绿色节点**：开始/结束节点，表示流程的起点和终点
-- **🔵 蓝色节点**：核心步骤，必须按顺序执行
-- **🟡 黄色节点**：分析检查步骤，确保质量
-- **🟣 紫色节点**：迭代修改步骤，可能需要重复执行
-- **🔴 红色节点**：决策节点，根据结果选择不同路径
 
 ---
 
