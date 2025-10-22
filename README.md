@@ -5,36 +5,36 @@
 ## 🎯 工作流程概览
 
 ```mermaid
-graph TD
-    A[🚀 开始项目] --> B[📋 初始化]
-    B --> C[📜 项目章程]
-    C --> D[📝 需求描述]
-    D --> E[❓ 阐明问题]
-    E --> F[📋 实现计划]
-    F --> G[📋 拆分任务]
-    G --> H[🔍 分析检查]
-    H --> I[🚀 开发实现]
-    I --> J{实现是否满意?}
-    J -->|否| K[🔧 修改实现]
+graph LR
+    A[🚀开始] --> B[📋初始化]
+    B --> C[📜章程]
+    C --> D[📝需求]
+    D --> E[❓澄清]
+    E --> F[📋计划]
+    F --> G[📋任务]
+    G --> H[🔍分析]
+    H --> I[🚀开发]
+    I --> J{满意?}
+    J -->|否| K[🔧修改]
     K --> I
-    J -->|是| L[📝 更新文档]
-    L --> M[📚 总结经验]
-    M --> N[🎉 项目完成]
+    J -->|是| L[📝更新]
+    L --> M[📚总结]
+    M --> N[🎉完成]
     
-    style A fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
-    style B fill:#e1f5fe,stroke:#2196f3,stroke-width:2px
-    style C fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
-    style D fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
-    style E fill:#fff3e0,stroke:#ff9800,stroke-width:2px
-    style F fill:#fce4ec,stroke:#e91e63,stroke-width:2px
-    style G fill:#f1f8e9,stroke:#8bc34a,stroke-width:2px
-    style H fill:#fff8e1,stroke:#ffc107,stroke-width:2px
-    style I fill:#e3f2fd,stroke:#03a9f4,stroke-width:2px
-    style J fill:#ffebee,stroke:#f44336,stroke-width:2px
-    style K fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
-    style L fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
-    style M fill:#f9fbe7,stroke:#8bc34a,stroke-width:2px
-    style N fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    style A fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+    style B fill:#e1f5fe,stroke:#2196f3,stroke-width:1px
+    style C fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
+    style D fill:#e8f5e8,stroke:#4caf50,stroke-width:1px
+    style E fill:#fff3e0,stroke:#ff9800,stroke-width:1px
+    style F fill:#fce4ec,stroke:#e91e63,stroke-width:1px
+    style G fill:#f1f8e9,stroke:#8bc34a,stroke-width:1px
+    style H fill:#fff8e1,stroke:#ffc107,stroke-width:1px
+    style I fill:#e3f2fd,stroke:#03a9f4,stroke-width:1px
+    style J fill:#ffebee,stroke:#f44336,stroke-width:1px
+    style K fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
+    style L fill:#e8f5e8,stroke:#4caf50,stroke-width:1px
+    style M fill:#f9fbe7,stroke:#8bc34a,stroke-width:1px
+    style N fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
 ```
 
 ### 📋 流程说明
