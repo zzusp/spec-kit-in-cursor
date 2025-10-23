@@ -2,6 +2,33 @@
 
 > 本指南将帮助您掌握使用Cursor结合Spec-Kit进行项目开发的完整流程，从初始化到最终实现的全过程。
 
+> **Spec Kit官方仓库**：[https://github.com/github/spec-kit](https://github.com/github/spec-kit) - 💫 Toolkit to help you get started with Spec-Driven Development
+
+## 📋 使用前准备
+
+### 🔧 本地安装Spec-Kit
+
+在使用本指南之前，请确保您已经安装了Spec-Kit：
+
+```bash
+# 安装Spec-Kit
+npm install -g @specify/spec-kit
+
+# 验证安装
+specify --version
+```
+
+> **注意**：确保您的Node.js版本 >= 16.0.0  
+> **参考**：详细安装说明请查看 [官方文档](https://github.com/github/spec-kit)
+
+### 📝 环境要求
+- ✅ Node.js >= 16.0.0
+- ✅ npm 或 yarn 包管理器
+- ✅ Git 版本控制
+- ✅ Cursor IDE
+
+---
+
 ## 🎯 工作流程概览
 
 ```mermaid
@@ -49,13 +76,13 @@ specify init [项目名]
 
 ```shell
 # 你需要检查生成的章程文件
-/constitution 当前项目必须要严格遵守的内容、边界（如：密码等敏感信息需要加密存储，变量命名是驼峰还是下划线、SQL语句严格遵守MySQL语法还是PostgreSQL等，可以不断完善补充。）
+/speckit.constitution 当前项目必须要严格遵守的内容、边界（如：密码等敏感信息需要加密存储，变量命名是驼峰还是下划线、SQL语句严格遵守MySQL语法还是PostgreSQL等，可以不断完善补充。）
 
 # 也可以像这样填写，这是官方视频的示例
-/constitution Fill the constitution with the bare minimum requirements for a static web app based on the template.
+/speckit.constitution Fill the constitution with the bare minimum requirements for a static web app based on the template.
 
 # 翻译后
-/constitution 基于最低限度的静态网页应用程序的模板，来填写章程文件
+/speckit.constitution 基于最低限度的静态网页应用程序的模板，来填写章程文件
 ```
 
 ### 💡 章程内容建议
@@ -69,7 +96,7 @@ specify init [项目名]
 
 ```shell
 # 会自动新建一个分支，并在分支上生成一些md文件，记录需求内容。需要关注的是生成的spec.md文件的内容
-/specify 新的需求内容是什么？为什么？（不涉及如何实现，使用什么技术栈）
+/speckit.specify 新的需求内容是什么？为什么？（不涉及如何实现，使用什么技术栈）
 
 # 当生成的需求文档中，存在需要修改的内容时：
 #（选中spec.md文件）
@@ -100,10 +127,10 @@ specify init [项目名]
 
 ```shell
 # AI会返回一些它觉得不确定或必要的问题，你需要回答，来明确需求中的歧义或缺失的决策点，并记录问题和结果到需求文档spec.md文件中。
-/clarify 可选，可以输入一些你重点关注的内容，比如性能瓶颈风险
+/speckit.clarify 可选，可以输入一些你重点关注的内容，比如性能瓶颈风险
 
 # 示例
-/clarify 你现在是项目产品/架构顾问，请给出一组澄清问题（不超过 12 个），用于与产品负责人对接，且每个问题后面说明为什么需要这个问题（1–2 行）。问题要基于现有表结构与业务目标。示例要命中要害（检测频率、阈值、删除策略、保留敏感信息等）。
+/speckit.clarify 你现在是项目产品/架构顾问，请给出一组澄清问题（不超过 12 个），用于与产品负责人对接，且每个问题后面说明为什么需要这个问题（1–2 行）。问题要基于现有表结构与业务目标。示例要命中要害（检测频率、阈值、删除策略、保留敏感信息等）。
 ```
 
 ### 🎯 重点关注领域
@@ -120,7 +147,7 @@ specify init [项目名]
 
 ```shell
 # 将会生成一个plan.md文件，记录了完整的实现方案。你需要检查方案内容是否符合预期，是否有需要修改内容
-/plan 如何实现？或对实现有什么要求？如：要使用什么技术栈、要复用代码中某部分已实现的功能、是否要生成测试代码之类的，如果有表结构之类的SQL语句，也可以输入在这里
+/speckit.plan 如何实现？或对实现有什么要求？如：要使用什么技术栈、要复用代码中某部分已实现的功能、是否要生成测试代码之类的，如果有表结构之类的SQL语句，也可以输入在这里
 
 # 当生成的方案文档中，存在需要修改的内容时
 #（选中plan.md文件）
@@ -138,7 +165,7 @@ specify init [项目名]
 
 ```shell
 # 将会生成一个tasks.md文件，记录了拆分后的任务步骤。你需要检查每项任务步骤是否正确，是否有多余步骤，是否缺少步骤，步骤内容是否需要修改
-/tasks 基于 @plan.md，请把实现分解为 20–30 条可执行任务（tasks），每个任务包含：
+/speckit.tasks 基于 @plan.md，请把实现分解为 20–30 条可执行任务（tasks），每个任务包含：
 - 标题
 - 描述（1–2 行）
 - 估时（小时）
@@ -169,7 +196,7 @@ P0-1 实现登录功能 估时 2h 前置无 验收：用户名密码正确可以
 
 ```shell
 # 命令会读取spec.md, plan.md, tasks.md， constitution.md文档，检查文档中前后矛盾或冲突的部分、潜在风险内容
-/analyze
+/speckit.analyze
 
 # 如果有冲突，直接在对话中描述需要修改的内容
 描述你需要修改的内容
@@ -186,7 +213,7 @@ P0-1 实现登录功能 估时 2h 前置无 验收：用户名密码正确可以
 
 ```shell
 # 开发实现
-/implement
+/speckit.implement
 
 # 当最终实现经常没有满足要求时
 直接在对话中描述需要修改的内容，直到功能实现，并符合期望
