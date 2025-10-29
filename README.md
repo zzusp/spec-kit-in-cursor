@@ -11,11 +11,18 @@
 在使用本指南之前，请确保您已经安装了Spec-Kit：
 
 ```bash
+# 安装uv。需要魔法访问到GitHub
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# 验证uv
+uv --version
+
 # 安装Spec-Kit
-npm install -g @specify/spec-kit
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 
 # 验证安装
-specify --version
+specify --help
+
 ```
 
 > **注意**：确保您的Node.js版本 >= 16.0.0  
@@ -66,7 +73,7 @@ graph LR
 ```shell
 # 已有项目初始化
 # 打开项目
-specify init
+specify init --here
 # 新项目初始化
 specify init [项目名]
 ```
